@@ -116,6 +116,7 @@ function changeSpeed() {
     video.playbackRate = speed.value; //Set video speed as playback rate
 }
 
+
 // Fullscreen ------------------------------- //
 
 
