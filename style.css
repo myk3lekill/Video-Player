@@ -99,9 +99,9 @@
     transition: height 0.1s ease-in-out;
   }
   
-    .progress-range:hover {
-        height: 10px;
-    }
+  .progress-range:hover {
+    height: 10px;
+  }
 
   .progress-bar {
     background: var(--primary-color);
