@@ -51,6 +51,14 @@ function updateProgress() {
     duration.textContent = `${displayTime(video.duration)}`; //Change the text of the duration
 }
 
+// Click to seek within the video
+function setProgress(e) {
+    const newTime = e.offsetX / progressRange.offsetWidth; //Catch the position in progress bar in %
+    progressBar.style.width = `${newTime * 100}%`; //Change the width of progress bar in %
+    video.currentTime = newTime * video.duration; //Change the current time of video playing
+    //console.log(newTime);
+}
+
 // Volume Controls --------------------------- //
 
 
@@ -66,4 +74,5 @@ function updateProgress() {
 playBtn.addEventListener('click', togglePlay);
 video.addEventListener('click', togglePlay);
 video.addEventListener('timeupdate', updateProgress);
-video.addEventListener('canplay', updateProgress)
+video.addEventListener('canplay', updateProgress);
+progressRange.addEventListener('click', setProgress);
