@@ -43,6 +43,7 @@ function displayTime(time) {
     return `${minutes}:${seconds}`;
 }
 
+
 // Update Progress Bar as the video plays
 function updateProgress() {
     //console.log('current time', video.currentTime, 'duration', video.duration)
@@ -84,7 +85,6 @@ function changeVolume(e) {
         volumeIcon.classList.add('fas', 'fa-volume-off')
     }
 }
-
 
 // Change Playback Speed -------------------- //
 
