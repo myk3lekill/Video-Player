@@ -122,7 +122,7 @@ function changeSpeed() {
 
 // Fullscreen ------------------------------- //
 
-/* View in fullscreen */
+/* View in fullscreen: check for the features */
 function openFullscreen(element) {
     if (element.requestFullscreen) {
       element.requestFullscreen();
@@ -136,10 +136,10 @@ function openFullscreen(element) {
       /* IE/Edge */
       element.msRequestFullscreen();
     }
-    video.classList.add('video-fullscreen');
+    video.classList.add('video-fullscreen');//Add class
   }
   
-  /* Close fullscreen */
+  /* Close fullscreen: check fro the fetures */
   function closeFullscreen() {
     if (document.exitFullscreen) {
       document.exitFullscreen();
@@ -153,17 +153,13 @@ function openFullscreen(element) {
       /* IE/Edge */
       document.msExitFullscreen();
     }
-    video.classList.remove('video-fullscreen');
+    video.classList.remove('video-fullscreen');//Remove class
   }
 
 //Toggle Fullscreen
 let fullscreen = false;
 function toggleFullscreen() {
-    if (!fullscreen) {
-        openFullscreen(player);
-    } else {
-        closeFullscreen();
-    }
+    !fullscreen ? openFullscreen(player) : closeFullscreen();//Code review: ternary operator
     fullscreen = !fullscreen;
 }
 
